@@ -2,34 +2,7 @@
 
  angular.module('login',[]).
     component('login',{
-        template:`
-<div class="row">
-  <div class="col-md-12">
-      <h3>Login Page</h3>
-
-      <form ng-submit="model.formSubmit()" class="form">
-        <div class="col-md-2">
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="model.username" placeholder="username" required=""/>
-          </div> 
-
-          <div class="form-group">
-            <input type="password" class="form-control" ng-model="model.password" placeholder="password" required=""/>
-          </div>
-
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="model.nickname" placeholder="nickname" />
-          </div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-success">Login</button>
-            <span class="text-danger">{{ model.error }}</span>
-          </div>
-        </div>
-      </form>
-
-  </div>
-</div>`,
+        templateUrl:'login/login.template.html',
         controllerAs:'model',
         controller:function($location,LoginService){
             var model = this;

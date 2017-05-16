@@ -2,35 +2,7 @@
 
  angular.module('chat',[]).
     component('chat',{
-        template:`<div> <h1>Chat page</h1> 
-            <div class="col-md-12">
-                 <div class="col-md-2">
-                    <ul class="user-list">
-                        <li ><span class="glyphicon glyphicon-user" style="color:blue;"></span> {{model.nickname}}</li>
-                        <li ng-repeat="user in model.users"><span class="glyphicon glyphicon-user"></span> {{user.author}}</li>
-                    </ul>
-                 </div>
-                 <div class="col-md-10">
-                    <div class="panel panel-default">
-                        <ul>
-                            <li ng-repeat="message in model.messages">
-                            <span style="color:gray;">{{message.author}} : {{message.time}}</span>  {{message.content}} 
-                            </li>
-                        </ul>
-                        <br>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" ng-model="model.message" placeholder="...." />
-                            </div>
-                            <div class="col-md-2">
-                                <button class="btn btn-info" ng-click="model.sendmessage()">send</button>
-                            </div>
-                         <div>
-                    </div>
-                 </div>
-            </div>
-            </div>`,
+        templateUrl:'chat/chat.template.html',
         controllerAs:'model',
         controller:function($location,LoginService,Thisuser,$timeout){
             var model = this;
