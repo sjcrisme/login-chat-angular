@@ -16,10 +16,6 @@ function smessage() {
 
 function thisUsersService(){
   this.nickname = '';
-    //     this.test = function(){
-    //         var now = new Date();
-    //         console.log("... " + this.nickname + " :" + now.toString());
-    //     }
 };
 
 angular

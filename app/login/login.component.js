@@ -10,6 +10,7 @@
             
             model.$onInit = function(){
             };
+
             model.formSubmit = function(){
                 if(LoginService.login(model.username, model.password, model.nickname)) {
                     model.error = '';
@@ -19,6 +20,8 @@
                     $location.path('/');
                 } else {
                     model.error = "Incorrect username/password !";
+                    model.username = '';
+                    model.password = '';
                 }   
             };
         }
