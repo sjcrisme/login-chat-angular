@@ -1,6 +1,6 @@
 
-angular.module('login.service',[]).
-    factory('LoginService',function() {
+angular.module('login.service',['chat.mesage']).
+    factory('LoginService',function(Thisuser) {
         var admin = 'admin';
         var pass = 'admin';
         var nick = 'guest';
@@ -12,8 +12,7 @@ angular.module('login.service',[]).
                 isAuthenticated = username === admin && password === pass;
 
                 if(isAuthenticated){
-              //  Thisuser.nickname = loginick || nick;;
-              //  Thisuser.test();
+                    Thisuser.nickname = loginick || nick;
                 }
                 
                 return isAuthenticated;

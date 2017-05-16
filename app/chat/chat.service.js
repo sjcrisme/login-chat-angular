@@ -1,4 +1,4 @@
-// Service
+// Services:
 function smessage() {
   this.getAllmessages = function() {
       return [
@@ -13,6 +13,17 @@ function smessage() {
             ];
   };
 }
+
+function thisUsersService(){
+  this.nickname = '';
+    //     this.test = function(){
+    //         var now = new Date();
+    //         console.log("... " + this.nickname + " :" + now.toString());
+    //     }
+};
+
 angular
   .module('chat.mesage',[])
-  .service('Smessage', smessage);
+  .service('Smessage', smessage)
+  .service('Thisuser', thisUsersService);
+

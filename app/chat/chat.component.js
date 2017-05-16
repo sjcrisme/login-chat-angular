@@ -4,9 +4,9 @@
     component('chat',{
         templateUrl:'chat/chat.template.html',
         controllerAs:'model',
-        controller:function($location,$timeout,Smessage,LoginService){ //Thisuser,
+        controller:function($location,$timeout,Smessage,LoginService,Thisuser){ 
             var model = this;
-            model.nickname = 'test2';//Thisuser.nickname;
+            model.nickname = Thisuser.nickname;
             model.messages= [];
             
             model.users = Smessage.getAllmessages();
@@ -47,11 +47,4 @@
                 },5000);
             }
         }
-    });//.
-    // service('Thisuser',function(){
-    //     this.nickname = '',
-    //     this.test = function(){
-    //         var now = new Date();
-    //         console.log("... " + this.nickname + " :" + now.toString());
-    //     }
-    // });
+    });
